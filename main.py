@@ -11,7 +11,7 @@ firstTime = True
 difficulty = ""
 playing = True
 while(playing == True):
-  difficulty2 = str(input("What difficulty do you want? Input the number next to the difficulty.\n\n- (1) Easy \n  - 3 seconds\n\n- (2) Medium\n  - 2 seconds\n\n- (3) Hard\n  - 1 second\n\n- (4) Expert\n  - 0.5 seconds\n\n- (5) Impossible \n  - 0.2 seconds\n  - no grid numbers\n\n"))
+  difficulty2 = str(input("What difficulty do you want? Input the number next to the difficulty.\n\n- (1) Easy \n  - 3 seconds\n\n- (2) Medium\n  - 2 seconds\n\n- (3) Hard\n  - 1 second\n\n- (4) Expert\n  - 0.5 seconds\n\n- (5) Extreme\n  - 0.2 seconds\n\n- (6) Impossible \n  - 0.05 seconds\n  - no grid numbers\n\n"))
 
   
   if(difficulty2 == "1"):
@@ -23,6 +23,8 @@ while(playing == True):
   elif(difficulty2 == "4"):
     difficulty = "impos"
   elif(difficulty2 == "5"):
+    difficulty = "extreme"
+  elif(difficulty2 == "6"):
     difficulty = "expert"
 
 
@@ -83,6 +85,17 @@ while(playing == True):
       print("DO NOT ANSWER YET!")
       
       time.sleep(0.1)
+  if(difficulty == "extreme"):
+    for i in range(2):
+      clearConsole()
+      currTime += 0.1
+      currTime = round(currTime,1)
+      print(currTime)
+      if(difficulty != "expert"):
+        print(final + "     |  |  |  |  |\n     1  2  3  4  5")
+      print("DO NOT ANSWER YET!")
+      
+      time.sleep(0.1)
   
   if(difficulty == "med"):
     for i in range(20):
@@ -107,15 +120,15 @@ while(playing == True):
       
       time.sleep(0.1)
   if(difficulty == "expert"):
-    for i in range(2):
+    for i in range(1):
       clearConsole()
-      currTime += 0.1
+      currTime += 0.05
       currTime = round(currTime,1)
       print(currTime)
       print(final)
       print("DO NOT ANSWER YET!")
       
-      time.sleep(0.1)
+      time.sleep(0.05)
   clearConsole()
   
   numbGuessQuest = input("What coordinate is the frowny face located? In the (x,y or xy) format. examples: 3,2 or 32\n")
